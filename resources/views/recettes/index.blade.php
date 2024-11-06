@@ -9,19 +9,35 @@
 <h2>La liste des recettes</h2>
 
 @if(!empty($recettes))
-    <ul>
+    <table>
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nom</td>
+            <td>Description</td>
+            <td>Visuel</td>
+            <td>Temps de préparation</td>
+            <td>Nombre de personnes</td>
+            <td>Coût</td>
+        </tr>
+        </thead>
+
+        <tbody>
+
         @foreach($recettes as $recette)
-            <li>
-                {{$recette->id}}
-                <strong>{{$recette->nom}}</strong>
-                {{$recette->description}}
-                {{$recette->visuel}}
-                {{$recette->temps_preparation}}
-                {{$recette->nb_personnes}}
-                {{$recette->cout}}
-            </li>
+            <tr>
+                <td>{{$recette->id}}</td>
+                <td><strong>{{$recette->nom}}</strong></td>
+                <td>{{$recette->description}}</td>
+                <td><img alt="{{$recette->visuel}}" src="../../../{{$recette->visuel}}"/> </td>
+                <td>{{$recette->temps_preparation}}</td>
+                <td>{{$recette->nb_personnes}}</td>
+                <td>{{$recette->cout}}</td>
+            </tr>
         @endforeach
-    </ul>
+        </tbody>
+    </table>
+    <img alt="visuel" src="../../../public/storage/recettes/icon.png"/>
 @else
     <h3>aucune recettes</h3>
 @endif

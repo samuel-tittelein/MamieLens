@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Recette extends Model
 {
     use HasFactory;
-    public $timestamps = false;
-
     protected $fillable = [
         'nom',
         'description',
@@ -23,6 +21,7 @@ class Recette extends Model
     protected $casts = [
         'temps_preparation' => 'integer',
         'nb_personnes' => 'integer',
-        'cout' => 'float'
+        'cout' => 'integer'
     ];
+
 }
