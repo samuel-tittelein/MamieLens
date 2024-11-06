@@ -37,7 +37,6 @@
         @endforeach
         </tbody>
     </table>
-    <img alt="visuel" src="../../../public/storage/recettes/icon.png"/>
 @else
     <h3>aucune recettes</h3>
 @endif
