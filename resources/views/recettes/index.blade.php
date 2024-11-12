@@ -1,11 +1,4 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Liste des recettes</title>
-</head>
-<body>
+<x-app :titre="$titre">
 <h2>La liste des recettes</h2>
 
 @if(!empty($recettes))
@@ -38,7 +31,6 @@
         </tbody>
     </table>
 @else
-    <h3>aucune recettes</h3>
+    <h3>aucune recette</h3>
 @endif
-</body>
-</html>
+</x-app>
