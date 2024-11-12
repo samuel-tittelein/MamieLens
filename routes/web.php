@@ -16,4 +16,4 @@ Route::get('/contact', function () {
 Route::post('/contact/submit', [RecetteController::class,'submit'])->name('contact.submit');
 
 
-Route::get('/images', [RecetteController::class,'index'])->name('images.index');
+Route::get('/recettes', [RecetteController::class,'index'])->name('images.index');

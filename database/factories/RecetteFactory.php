@@ -17,7 +17,7 @@ class RecetteFactory extends Factory
             'nom' => $this->faker->sentence(4),
             'description' => $this->faker->paragraph(2),
             'category' => $this->faker->randomElement(['patisserie', 'salé', 'dessert', 'plat', 'boisson']),
-            'visuel' => $this->random_pic('public/storage/images'),
+            'visuel' => $this->random_pic('resources/images'),
             'temps_preparation' => $this->faker->numberBetween(15, 180),
             'nb_personnes' => $this->faker->numberBetween(1, 10),
             'cout' => $this->faker->randomDigitNotNull()

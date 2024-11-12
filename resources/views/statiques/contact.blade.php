@@ -1,7 +1,6 @@
 <x-app :titre="$titre">
     <div>
         <h1>{{$titre}}</h1>
-        <h2>Contact</h2>
 
         <form action="{{ route('contact.submit') }}" method="POST" class="contact-form">
             @csrf

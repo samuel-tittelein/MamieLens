@@ -22,7 +22,7 @@
                 <td>{{$recette->id}}</td>
                 <td><strong>{{$recette->nom}}</strong></td>
                 <td>{{$recette->description}}</td>
-                <td><img alt="{{$recette->visuel}}" src="../../../{{$recette->visuel}}"/> </td>
+                <td><img alt="{{$recette->visuel}}" src="{{Vite::asset($recette->visuel)}}"/> </td>
                 <td>{{$recette->temps_preparation}}</td>
                 <td>{{$recette->nb_personnes}}</td>
                 <td>{{$recette->cout}}</td>

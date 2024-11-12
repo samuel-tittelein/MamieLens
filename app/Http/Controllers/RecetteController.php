@@ -9,7 +9,7 @@ class RecetteController extends Controller
 {
     public function index() {
         $recettes = Recette::all(); // stocke dans la variable $Taches, les objets Tache récupérés dans la table taches de la base de données.
-        return view('images.index', ['titre' => "Recettes", 'images' => $recettes]);
+        return view('recettes.index', ['titre' => "Recettes", 'recettes' => $recettes]);
     }
 
     public function submit(Request $request) {
