@@ -1,4 +1,10 @@
 <x-app :titre="$titre">
+    <style>
+        td > img {
+            height: 50px;
+            width: auto;
+        }
+    </style>
 <h2>La liste des recettes</h2>
 
 @if(!empty($recettes))
@@ -23,9 +29,9 @@
                 <td><strong>{{$recette->nom}}</strong></td>
                 <td>{{$recette->description}}</td>
                 <td><img alt="{{$recette->visuel}}" src="{{Vite::asset($recette->visuel)}}"/> </td>
-                <td>{{$recette->temps_preparation}}</td>
-                <td>{{$recette->nb_personnes}}</td>
-                <td>{{$recette->cout}}</td>
+                <td>{{$recette->temps_preparation}} min</td>
+                <td>{{$recette->nb_personnes}} personnes</td>
+                <td>{{$recette->cout}}€</td>
             </tr>
         @endforeach
         </tbody>

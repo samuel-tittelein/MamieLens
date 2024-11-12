@@ -48,6 +48,7 @@ main {
     grid-column: 1 / 3;
     overflow: scroll;
     padding: 10px 20px;
+    margin : 0 auto
 }
 
 aside {
@@ -65,4 +66,16 @@ footer {
     display: flex;
     justify-content: center;
     margin-top: 24px;
+}
+
+thead {
+    font-weight: bold;
+    color : white;
+    background-color : #707070;
+}
+
+#img-accueil {
+    width: 60vw;
+    height: auto;
+    align-self: center;
 }

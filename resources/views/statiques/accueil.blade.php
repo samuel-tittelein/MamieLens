@@ -1,8 +1,7 @@
 <x-app :titre="$titre">
 <div>
     <h1>{{$titre}}</h1>
-    <h2>Gestion des tâches</h2>
-    <p>Bienvenue dans l'application de gestion des tâches.</p>
-    <img src="{{ Vite::asset('resources/images/waifu4.jpg') }}" alt="waifu">
+    <p>Bienvenue dans l'application des recettes</p>
+    <img src="{{ Vite::asset('resources/images/bannieregit.jpg') }}" alt="waifu" id="img-accueil">
 </div>
 </x-app>
