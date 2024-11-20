@@ -34,6 +34,7 @@
                     <td>{{$recette->temps_preparation}} min</td>
                     <td>{{$recette->nb_personnes}} personnes</td>
                     <td>{{$recette->cout}}€</td>
+
                 </tr>
 
                 </tbody>

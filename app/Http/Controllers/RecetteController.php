@@ -56,7 +56,7 @@ class RecetteController extends Controller
     }
 
     public function destroy($id) {
-        $recette = Recette::find($id);
+        $recette = Recette::findOrFail($id);
         $recette->delete();
 
         return redirect()->route('recettes.index');

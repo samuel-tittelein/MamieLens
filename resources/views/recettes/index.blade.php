@@ -6,7 +6,7 @@
         <button><a href="/recettes/edit">Editer</a></button>
         <button><a href="/recettes/create">Créer</a></button>
         <button><a href="/recettes/search">Rechercher</a></button>
-        <button><a href="/recettes/delete">Supprimer</a></button>
+
     </div>
 
     @if(!empty($recettes))
@@ -20,6 +20,7 @@
                 <th scope="col">Temps de préparation</th>
                 <th scope="col">Nombre de personnes</th>
                 <th scope="col">Coût</th>
+                <th scope="col"></th>
             </tr>
             </thead>
 
@@ -34,6 +35,7 @@
                     <td>{{$recette->temps_preparation}} min</td>
                     <td>{{$recette->nb_personnes}} personnes</td>
                     <td>{{$recette->cout}}€</td>
+                    <td><a href="/recettes/destroy"> <img src="{{ Vite::asset('resources/images/icons/effacer.png')}}" alt="supprimer" style="height: 2rem"></a></td>
                 </tr>
             @endforeach
             </tbody>

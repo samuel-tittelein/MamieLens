@@ -167,7 +167,17 @@ footer {
     text-align: center;
 }
 
-
+form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+    border: #1098ad 1px solid;
+    border-radius: 10px;
+    gap: 0.5rem;
+}
+/*
 .form-create * {
     box-sizing: border-box;
 }
@@ -197,7 +207,7 @@ footer {
 
 .form-buttons {
     justify-content: space-around;
-}
+}*/
 
 /* Style général du tableau */
 table {

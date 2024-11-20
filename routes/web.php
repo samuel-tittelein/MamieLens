@@ -3,6 +3,8 @@
 use App\Http\Controllers\RecetteController;
 use Illuminate\Support\Facades\Route;
 
+Route::resource('recettes', 'RecetteController');
+
 Route::get('/', function () {
     return view('statiques.accueil', ['titre' => 'Accueil']);
 })->name('accueil');
