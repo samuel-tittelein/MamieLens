@@ -15,4 +15,8 @@ class RecetteController extends Controller
     public function submit(Request $request) {
         return view('statiques.accueil', ["Accueil"]);
     }
+
+    public function recette($recette) {
+        return view('recettes.recette', ['recette' => $recette]);
+    }
 }
