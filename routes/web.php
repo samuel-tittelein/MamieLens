@@ -15,14 +15,14 @@ Route::get('/contact', function () {
 
 Route::post('/contact/submit', [RecetteController::class,'submit'])->name('contact.submit');
 
-Route::get('/recettes', [RecetteController::class,'index'])->name('images.index');
+Route::get('/recettes', [RecetteController::class,'index'])->name('recettes.index');
 
-Route::get('/recettes/{recette}', [RecetteController::class,'recette'])->name('recettes.recette');
+Route::get('/recettes/{id}', [RecetteController::class,'recette'])->where('id', '[0-9]+')->name('recettes.recette');
 Route::get('/recettes/create', [RecetteController::class,'create'])->name('recettes.create');
 Route::post('/recettes', [RecetteController::class,'store'])->name('recettes.store');
 
-Route::get('/recettes/{recette}/edit', [RecetteController::class,'edit'])->name('recettes.edit');
-Route::put('/recettes/{recette}', [RecetteController::class,'update'])->name('recettes.update');
-Route::delete('/recettes/{recette}', [RecetteController::class,'destroy'])->name('recettes.destroy');
+Route::get('/recettes/{id}/edit', [RecetteController::class,'edit'])->where('id', '[0-9]+')->name('recettes.edit');
+Route::put('/recettes/{id}', [RecetteController::class,'update'])->where('id', '[0-9]+')->name('recettes.update');
+Route::delete('/recettes/{id}', [RecetteController::class,'destroy'])->where('id', '[0-9]+')->name('recettes.destroy');
 
 Route::get('/recettes/search', [RecetteController::class,'search'])->name('recettes.search');

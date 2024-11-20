@@ -48,7 +48,6 @@ main {
     grid-column: 1 / 3;
     overflow: scroll;
     padding: 10px 20px;
-    margin : 0 auto
 }
 
 aside {
@@ -68,14 +67,210 @@ footer {
     margin-top: 24px;
 }
 
-thead {
-    font-weight: bold;
-    color : white;
-    background-color : #707070;
+.img-land {
+    display: block;
+    width: 60vw;
+    margin: 10px auto;
 }
 
-#img-accueil {
-    width: 60vw;
-    height: auto;
-    align-self: center;
+.tache {
+    display: grid;
+    width: 650px;
+    grid-template-columns: 100px 1fr 100px 100px;
+    border: #1098ad 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+    row-gap: 10px;
+    margin: 0 auto;
+}
+
+.tache-description {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.ligne {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bouton {
+    padding: 6px 10px;
+    font-size: 1.5rem;
+    font-width: bold;
+    background-color: #1098ad;
+    margin-right: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;;
+}
+
+.bouton a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.image {
+    grid-column: 1/-1;
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+}
+
+
+.msg-info {
+    width: 500px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+.msg-info .primary {
+    background-color: #c0eb75;
+    color: #051f6a;
+}
+
+.msg-info .warning {
+    background-color: #ffe066;
+    color: #713600;
+}
+
+.msg-info .error {
+    background-color: #ffa8a8;
+    color: #401e0e;
+}
+
+.msg-icon {
+    font-size: 2rem;
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+}
+
+.msg-message {
+    /*    flex: 1 0 250px;*/
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.form-create * {
+    box-sizing: border-box;
+}
+
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-control, .form-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-label {
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-input {
+    flex: 1 0 220px;
+}
+
+.form-buttons {
+    justify-content: space-around;
+}
+
+/* Style général du tableau */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Supprime les espacements entre les cellules */
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif; /* Police simple et moderne */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour donner de la profondeur */
+}
+
+/* Style des en-têtes de tableau */
+th {
+    background-color: #4CAF50; /* Couleur de fond verte pour les en-têtes */
+    color: white; /* Texte en blanc */
+    text-align: left; /* Alignement du texte à gauche */
+    padding: 12px 15px; /* Espacement interne */
+    font-size: 16px; /* Taille de la police */
+}
+
+/* Style des cellules du tableau */
+td {
+    padding: 10px 15px; /* Espacement interne */
+    border-bottom: 1px solid #ddd; /* Bordure subtile entre les lignes */
+    text-align: left; /* Alignement à gauche */
+    font-size: 14px; /* Taille de la police */
+}
+
+/* Effet au survol de la ligne */
+tr:hover {
+    background-color: #80f09c !important; /* Changement de couleur de fond au survol */
+}
+
+/* Bordure du tableau */
+table, th, td {
+    border: 1px solid #ddd; /* Bordure gris clair */
+}
+
+/* Amélioration de la lisibilité des lignes impaires */
+tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Fond légèrement gris pour les lignes impaires */
+}
+
+/* Amélioration de la lisibilité des lignes paires */
+tr:nth-child(even) {
+    background-color: #ffffff; /* Fond blanc pour les lignes paires */
+}
+
+/* Ajouter un effet de focus sur les cellules */
+td:focus {
+    outline: none;
+    background-color: #e0f7fa; /* Changer la couleur de fond au focus */
+}
+
+/* Style du tableau lorsqu'il est dans un conteneur avec une largeur limitée */
+.container-table {
+    max-width: 1200px; /* Limite la largeur à 1200px */
+    margin: 0 auto; /* Centre le tableau dans le conteneur */
+    overflow-x: auto; /* Permet un défilement horizontal si nécessaire */
+}
+
+td > img {
+    height: 50px;
+    width: auto;
+}
+.content {
+    display: grid;
+    grid-template-columns: 8vw auto; /* Une colonne de 8vw et une colonne qui s'ajuste automatiquement */
+    gap: 10px;
+}
+.menu-recettes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 8vw;
+    margin-top: 2rem;
 }

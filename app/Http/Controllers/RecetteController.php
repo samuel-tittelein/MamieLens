@@ -16,12 +16,10 @@ class RecetteController extends Controller
         return view('statiques.accueil', ["Accueil"]);
     }
 
-    public function recette($recette) {
-        return view('recettes.recette', ['recette' => $recette]);
-    }
 
-    public function create() {
-        return view('recettes.create', ['titre' => "Création d'une recette"]);
+    public function recette($id) {
+        $recette = Recette::find($id);
+        return view('recettes.recette', ['titre' => $recette->nom, 'recette' => $recette]);
     }
 
     public function store(Request $request) {
@@ -64,6 +62,7 @@ class RecetteController extends Controller
         return redirect()->route('recettes.index');
     }
 
+    /*
     public function search(Request $request) {
         $search = $request->input('search');
         $recettes = Recette::where('nom', 'LIKE', "%$search%")
@@ -72,5 +71,14 @@ class RecetteController extends Controller
                               ->get();
 
         return view('recettes.index', ['titre' => "Recherche", 'recettes' => $recettes]);
+    }*/
+
+    public function create()
+    {
+        // Récupérer toutes les catégories de la base de données
+        $categories = Recette::distinct('category')->pluck('category');
+
+        // Passer les catégories à la vue
+        return view('recettes.create', ['titre' => "Création d'une recette", 'categories' => $categories]);
     }
 }
