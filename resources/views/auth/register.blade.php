@@ -1,5 +1,14 @@
 <x-guest-layout>
     <div class="wrap">
+        @if ($errors->any())
+             <div>
+                 <ul>
+                    @foreach ($errors->all() as $error)
+                         <li>{{ $error }}</li>
+                         @endforeach
+                    </ul>
+                 </div>
+            @endif
         <form class="login-form" action="{{route('register')}}" method="post">
             @csrf
             <div class="form-header">

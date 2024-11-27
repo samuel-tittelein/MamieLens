@@ -30,6 +30,10 @@ Route::delete('/recettes/{id}', [RecetteController::class,'destroy'])->where('id
 Route::get('/recettes/search', [RecetteController::class,'search'])->name('recettes.search');
 
 Route::get('/home', function () {
-    return view('dashboard');
+    return view('statiques.dashboard', ['titre' => 'Dashboard']);
 })->middleware(['auth'])->name('home');
+
+Route::middleware(['auth'])->get('/dashboard', function () {
+    return view('statiques.dashboard', ['titre' => 'Dashboard']);
+})->name('home2');
 
