@@ -28,3 +28,8 @@ Route::put('/recettes/{id}', [RecetteController::class,'update'])->where('id', '
 Route::delete('/recettes/{id}', [RecetteController::class,'destroy'])->where('id', '[0-9]+')->name('recettes.destroy');
 
 Route::get('/recettes/search', [RecetteController::class,'search'])->name('recettes.search');
+
+Route::get('/home', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('home');
+

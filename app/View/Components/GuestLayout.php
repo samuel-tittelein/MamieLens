@@ -6,15 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class App extends Component
+class GuestLayout extends Component
 {
-    public string $titre;
     /**
      * Create a new component instance.
      */
-    public function __construct(string $titre)
+    public function __construct()
     {
-        $this->titre = $titre ?? "sans titre";
+        //
     }
 
     /**
@@ -22,6 +21,6 @@ class App extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.app-layout');
+        return view('components.guest-layout');
     }
 }

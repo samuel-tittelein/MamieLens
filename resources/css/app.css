@@ -104,7 +104,7 @@ footer {
     margin-right: 10px;
     color: #fff;
     border: none;
-    cursor: pointer;;
+    cursor: pointer;
 }
 
 .bouton a {
@@ -283,4 +283,9 @@ td > img {
     gap: 10px;
     width: 8vw;
     margin-top: 2rem;
+}
+
+#img-accueil {
+    width: 60vw;
+    align-self: center;
 }
