@@ -48,7 +48,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function taches() {
+    public function taches(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(Recette::class);
     }
 }

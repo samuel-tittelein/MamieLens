@@ -17,6 +17,8 @@ Route::get('/contact', function () {
 
 Route::post('/contact/submit', [RecetteController::class,'submit'])->name('contact.submit');
 
+Route::resource('recettes', RecetteController::class);
+/*
 Route::get('/recettes', [RecetteController::class,'index'])->name('recettes.index');
 
 Route::get('/recettes/{id}', [RecetteController::class,'recette'])->where('id', '[0-9]+')->name('recettes.recette');
@@ -28,7 +30,7 @@ Route::put('/recettes/{id}', [RecetteController::class,'update'])->where('id', '
 Route::delete('/recettes/{id}', [RecetteController::class,'destroy'])->where('id', '[0-9]+')->name('recettes.destroy');
 
 Route::get('/recettes/search', [RecetteController::class,'search'])->name('recettes.search');
-
+*/
 Route::get('/home', function () {
     return view('statiques.dashboard', ['titre' => 'Dashboard']);
 })->middleware(['auth'])->name('home');

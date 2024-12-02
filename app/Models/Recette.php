@@ -24,8 +24,14 @@ class Recette extends Model
         'cout' => 'integer'
     ];
 
-    public function user() {
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(User::class);
+    }
+
+    public function ingredients(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Ingredient::class, 'compose');
     }
 
 }
