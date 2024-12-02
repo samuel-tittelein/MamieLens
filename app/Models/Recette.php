@@ -31,7 +31,9 @@ class Recette extends Model
 
     public function ingredients(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(Ingredient::class, 'compose');
+        return $this->belongsToMany(Ingredient::class, 'compose')
+            ->as('compose')
+            ->withPivot('quantite', 'observation');
     }
 
 }
