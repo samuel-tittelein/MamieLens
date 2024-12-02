@@ -39,7 +39,8 @@ class RecetteController extends Controller
 
     public function edit($id) {
         $recette = Recette::find($id);
-        return view('recettes.edit', ['recette' => $recette, 'titre' => "Éditer une recette"]);
+        $categories = Recette::distinct('category')->pluck('category');
+        return view('recettes.edit', ['recette' => $recette, 'titre' => "Éditer une recette", 'categories' => $categories]);
     }
 
     public function update($id, Request $request) {
