@@ -21,6 +21,7 @@
                 <th scope="col">Nombre de personnes</th>
                 <th scope="col">Coût</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
             </thead>
 
@@ -35,6 +36,7 @@
                     <td>{{$recette->temps_preparation}} min</td>
                     <td>{{$recette->nb_personnes}} personnes</td>
                     <td>{{$recette->cout}}€</td>
+                    <td><a href="{{route('recettes.show', ['id' => $recette->id])}}"> <img src="{{ Vite::asset('resources/images/icons/editer.png')}}" alt="voir" style="height: 2rem"></a></td>
                     <td><a href="/recettes/destroy"> <img src="{{ Vite::asset('resources/images/icons/effacer.png')}}" alt="supprimer" style="height: 2rem"></a></td>
                 </tr>
             @endforeach
