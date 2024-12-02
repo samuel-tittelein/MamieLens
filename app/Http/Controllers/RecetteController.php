@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Recette;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class RecetteController extends Controller
 {
@@ -17,7 +18,7 @@ class RecetteController extends Controller
     }
 
 
-    public function recette($id) {
+    public function show(int $id) {
         $recette = Recette::find($id);
         return view('recettes.recette', ['titre' => $recette->nom, 'recette' => $recette]);
     }
@@ -38,7 +39,8 @@ class RecetteController extends Controller
 
     public function edit($id) {
         $recette = Recette::find($id);
-        return view('recettes.edit', ['recette' => $recette, 'titre' => "Éditer une recette"]);
+        $categories = Recette::distinct('category')->pluck('category');
+        return view('recettes.edit', ['recette' => $recette, 'titre' => "Éditer une recette", 'categories' => $categories]);
     }
 
     public function update($id, Request $request) {
@@ -57,9 +59,19 @@ class RecetteController extends Controller
 
     public function destroy($id) {
         $recette = Recette::findOrFail($id);
+
+
+        if (Gate::denies('delete-tache', $recette)) {
+            return redirect()->route('recette.show',
+                ['titre' => 'Affichage d\'une tâche', 'id' => $recette->id, 'action' => 'show'])
+                ->with('type', 'error')
+                ->with('msg', 'Impossible de supprimer la tâche');
+        }
         $recette->delete();
 
-        return redirect()->route('recettes.index');
+        return redirect()->route('recettes.index', ['recettes' => $recette])
+            ->with('type', 'success')
+            ->with('msg', 'Tâche supprimée avec succès');
     }
 
     /*
