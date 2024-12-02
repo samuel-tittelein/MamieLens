@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+use App\Models\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,7 +21,8 @@ class RecetteFactory extends Factory
             'visuel' => $this->random_pic('resources/images'),
             'temps_preparation' => $this->faker->numberBetween(15, 180),
             'nb_personnes' => $this->faker->numberBetween(1, 10),
-            'cout' => $this->faker->randomDigitNotNull()
+            'cout' => $this->faker->randomDigitNotNull(),
+            'user_id' => User::factory(),
         ];
     }
 

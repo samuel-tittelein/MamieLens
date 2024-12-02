@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('temps_preparation');
             $table->integer('nb_personnes');
             $table->integer('cout');
+            $table->foreignId('user_id')->constrained('user')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -15,13 +15,18 @@ class Recette extends Model
         'visuel',
         'temps_preparation',
         'nb_personnes',
-        'cout'
+        'cout',
+        'user_id',
     ];
 
     protected $casts = [
         'temps_preparation' => 'integer',
         'nb_personnes' => 'integer',
-        'cout' => 'integer'
+        'cout' => 'integer',
+        'user_id' => 'integer',
     ];
 
+    function user() {
+        return $this->belongsTo(User::class);
+    }
 }
